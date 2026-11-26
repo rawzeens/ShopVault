@@ -1,0 +1,5 @@
+# Production: JSON (ECS) logs for log shippers; everything else is in application.yml.
+logging:
+  structured:
+    format:
+      console: ecs

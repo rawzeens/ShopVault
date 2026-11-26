@@ -1,0 +1,32 @@
+# Local development: in-memory H2, demo catalogue, Swagger UI at /swagger-ui.html.
+# These sample secrets are rejected at startup by every other profile.
+spring:
+  datasource:
+    url: jdbc:h2:mem:shopvault;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+server:
+  forward-headers-strategy: none
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+logging:
+  level:
+    com.r4xn.shopvault: DEBUG
+
+app:
+  jwt:
+    secret: ZGV2LW9ubHktand0LXNlY3JldC1uZXZlci11c2UtdGhpcy1vdXRzaWRlLXlvdXItbGFwdG9w
+  payments:
+    webhook-secret: dev-only-webhook-secret
+    checkout-base-url: http://localhost:8080/fake-pay
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:5173
+  bootstrap:
+    admin-email: admin@shopvault.dev
+    admin-password: dev-only-Shop-Owner-2026
