@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test-${random.uuid};MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+server:
+  forward-headers-strategy: none
+
+app:
+  jwt:
+    secret: dGVzdC1vbmx5LWp3dC1zZWNyZXQtdXNlZC1ieS10aGUtYXV0b21hdGVkLXRlc3Qtc3VpdGU=
+  security:
+    rate-limit:
+      enabled: false
+  payments:
+    webhook-secret: test-only-webhook-secret-0123456789abcdef
+  cors:
+    allowed-origins: https://shop.example.com
+  bootstrap:
+    admin-email: admin@test.shopvault
+    admin-password: test-only-Shop-Owner-2026
+  jobs:
+    order-expiry-initial-delay: PT1H
