@@ -1,0 +1,6 @@
+# Security-sensitive code needs an owner's review.
+*                                   @rawzeens
+/src/main/java/com/r4xn/shopvault/security/  @rawzeens
+/src/main/java/com/r4xn/shopvault/auth/      @rawzeens
+/src/main/java/com/r4xn/shopvault/payment/   @rawzeens
+/.github/                           @rawzeens

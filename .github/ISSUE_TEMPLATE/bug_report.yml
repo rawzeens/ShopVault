@@ -1,0 +1,29 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Security vulnerabilities must not be reported here.** See SECURITY.md for private reporting.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the request (method, path, body without secrets) and the response status and body.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: request-id
+    attributes:
+      label: X-Request-Id of the failing response (if any)
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
